@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20190822161012) do
     t.string "version", null: false
     t.string "title"
     t.text "description"
+    t.string "maintainer_string"
+    t.string "authors_string"
     t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
