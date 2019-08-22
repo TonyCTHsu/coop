@@ -15,6 +15,22 @@ ActiveRecord::Schema.define(version: 20190822161012) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "authors", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_authors_on_email", unique: true
+  end
+
+  create_table "authors_package_versions", id: false, force: :cascade do |t|
+    t.bigint "package_version_id", null: false
+    t.bigint "author_id", null: false
+    t.index ["author_id"], name: "index_authors_package_versions_on_author_id"
+    t.index ["package_version_id", "author_id"], name: "author_package_version_uniq_idx", unique: true
+    t.index ["package_version_id"], name: "index_authors_package_versions_on_package_version_id"
+  end
+
   create_table "package_versions", force: :cascade do |t|
     t.string "name", null: false
     t.string "version", null: false
@@ -23,8 +39,10 @@ ActiveRecord::Schema.define(version: 20190822161012) do
     t.string "maintainer_string"
     t.string "authors_string"
     t.datetime "published_at"
+    t.bigint "maintainer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["maintainer_id"], name: "index_package_versions_on_maintainer_id"
     t.index ["name", "version"], name: "index_package_versions_on_name_and_version", unique: true
   end
 

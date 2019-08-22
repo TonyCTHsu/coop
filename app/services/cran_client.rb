@@ -2,7 +2,6 @@ class CranClient
   def initialize(url: 'https://cran.r-project.org/src/contrib/'.freeze)
     @conn = Faraday.new(url: url) do |faraday|
       faraday.request  :url_encoded
-      # faraday.response :json, parser_options: { symbolize_names: true }
       faraday.response :logger if Rails.env.development?
       faraday.adapter Faraday.default_adapter
     end
