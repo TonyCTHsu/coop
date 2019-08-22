@@ -34,13 +34,13 @@ gem 'sidekiq'
 gem 'sidekiq-scheduler'
 gem 'activerecord-import'
 gem 'faraday'
-gem 'faraday_middleware'
 gem 'treetop-dcf'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8'
+  gem 'pry-rails'
 end
 
 group :development do
