@@ -30,6 +30,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
+gem 'activerecord-import'
+gem 'faraday'
+gem 'faraday_middleware'
+gem 'treetop-dcf'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
