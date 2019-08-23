@@ -15,8 +15,8 @@ class CreatePackageVersion < ActiveRecord::Migration[5.1]
     add_index :package_versions, [:name, :version], unique: true
 
     create_table :authors do |t|
-      t.string      :name,    null: false
-      t.string      :email,   index: { unique: true }
+      t.string      :name,    index: { unique: true }, null: false
+      t.string      :email
       t.timestamps null: false
     end
 

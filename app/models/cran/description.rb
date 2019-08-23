@@ -14,6 +14,8 @@ module Cran
       }
     end
 
+    private
+
     def title
       @data.fetch('Title')
     end

@@ -11,6 +11,8 @@ module Cran
       }
     end
 
+    private
+
     def name
       @data.fetch('Package')
     end

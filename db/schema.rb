@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20190822161012) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_authors_on_email", unique: true
+    t.index ["name"], name: "index_authors_on_name", unique: true
   end
 
   create_table "authors_package_versions", id: false, force: :cascade do |t|
