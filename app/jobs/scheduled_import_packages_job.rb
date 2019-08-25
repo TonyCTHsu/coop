@@ -1,6 +1,4 @@
-class DailyImportPackagesJob < ApplicationJob
-  queue_as :default
-
+class ScheduledImportPackagesJob < ApplicationJob
   def perform
     cran_packages = CranService.new.packages
     service = BatchImportPackagesService.new(cran_packages)

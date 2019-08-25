@@ -1,0 +1,4 @@
+:schedule:
+  ScheduledImportPackagesJob:
+    cron: '24 10 * * * Europe/Berlin'
+    queue: default
