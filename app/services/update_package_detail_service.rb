@@ -14,6 +14,6 @@ class UpdatePackageDetailService
   attr_reader :package_version
 
   def description
-    @description ||= CranService.description(package_version)
+    @description ||= CranService.new.description(package_version)
   end
 end
