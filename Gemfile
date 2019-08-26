@@ -35,6 +35,7 @@ gem 'sidekiq-scheduler'
 gem 'activerecord-import'
 gem 'faraday'
 gem 'treetop-dcf'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

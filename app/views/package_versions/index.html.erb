@@ -1,0 +1,12 @@
+<div>
+  <% @package_versions.each do |package_version| %>
+    <div>
+      <span>
+        NAME: <%= package_version.name %>,
+        VERSION: <%= package_version.version %>
+      </span>
+    </div>
+  <% end %>
+
+  <%= paginate @package_versions %>
+</div>
